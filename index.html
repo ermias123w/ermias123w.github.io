@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ado Evergreen Dairy Farm</title>
+</head>
+<body>
+  <header>
+    <img src="ado.png" alt="Logo">
+    <h1>Ado Evergreen Dairy Farm</h1>
+    <p>Sebeta, Oromia | Milk, Cheese, Yogurt Production</p>
+  </header>
+<style>    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header img {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  margin: 0;
+  font-size: 16px;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #388e3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2c6b2f;
+}
+
+#milk-result, #cheese-result, #yogurt-result {
+  margin-top: 15px;
+}
+
+#milk-result p, #cheese-result p, #yogurt-result p {
+  font-weight: bold;
+}
+
+footer {
+  background-color: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Parallax Section */
+.parallax {
+  background-image: url('ohio.jpg');
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+@media (max-width: 600px) {
+  section {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  header img {
+    height: 60px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+</style>
+  <!-- Parallax Section -->
+  <div class="parallax"></div>
+
+  <!-- Executive Summary -->
+  <section>
+    <h2>Executive Summary</h2>
+    <p>Ado Evergreen Dairy Farm is a student-founded dairy production farm that provides fresh milk, cheese, and yogurt. Located in Sebeta, Oromia, the business is committed to producing high-quality dairy products through sustainable practices and innovation.</p>
+  </section>
+
+  <!-- Company Description -->
+  <section>
+    <h2>Company Description</h2>
+    <p>The farm was established by 8 students with a passion for agriculture and sustainability. Starting with 25 dairy cows, the business focuses on ethical practices, youth employment, and boosting the dairy sector in Ethiopia.</p>
+  </section>
+
+  <!-- Market Analysis -->
+  <section>
+    <h2>Market Analysis</h2>
+    <p>Our target market includes local households, supermarkets, restaurants, and institutions. We offer premium, fresh, locally produced dairy products that stand out in both quality and transparency.</p>
+  </section>
+
+  <!-- Production Plan -->
+  <section>
+    <h2>Production Plan</h2>
+    <p>We began with 25 high-yielding cows (Holstein, Jersey, Boran, Arsi) and plan to double our herd in two years. Focus areas: milk quality, hygiene, and animal welfare.</p>
+  </section>
+
+  <!-- Sales Strategy -->
+  <section>
+    <h2>Sales Strategy</h2>
+    <p>We’ll leverage direct sales, digital marketing, and community outreach. Key channels: home delivery, supermarkets, schools, and restaurant partnerships.</p>
+  </section>
+  <!-- Financial Plan -->
+  <section>
+    <h2>Financial Plan</h2>
+    <p>Initial investment covers land, equipment, livestock, and labor. Expected revenue: ETB 2.4 million per year. Break-even: 18 months. Strategic growth planned for 3 years.</p>
+  </section>
+
+  <!-- Our Cattle Breeds -->
+  <section>
+    <h2>Our Cattle Breeds</h2>
+    <ul>
+      <li><strong>Holstein-Friesian:</strong> ~22 liters/day</li>
+      <li><strong>Jersey:</strong> ~17 liters/day (high butterfat)</li>
+      <li><strong>Boran:</strong> ~10-12 liters/day (climate-resilient)</li>
+      <li><strong>Arsi:</strong> ~8-10 liters/day (dual purpose)</li>
+      <li><strong>Sheko:</strong> ~6-8 liters/day (hardy and multipurpose)</li>
+    </ul>
+  </section>
+
+  <!-- Enter Milk Sales Data -->
+  <section>
+    <h2>Enter Milk Sales Data (ETB)</h2>
+    <form id="milk-form">
+      <label for="daily-production">Daily Milk Production (liters):</label>
+      <input type="number" id="daily-production" value="500" required>
+
+      <label for="milk-price">Milk Price per Liter (ETB):</label>
+      <input type="number" id="milk-price" value="65" required>
+
+      <button type="button" onclick="calculateMilk()">Calculate Milk Revenue</button>
+    </form>
+    <div id="milk-result"></div>
+  </section>
+
+  <!-- Enter Cheese Sales Data -->
+  <section>
+    <h2>Enter Cheese Sales Data (ETB)</h2>
+    <form id="cheese-form">
+      <label for="cheese-kg">Cheese Production per Month (kg):</label>
+      <input type="number" id="cheese-kg" value="150" required>
+
+      <label for="cheese-price">Cheese Price per Kg (ETB):</label>
+      <input type="number" id="cheese-price" value="300" required>
+
+      <button type="button" onclick="calculateCheese()">Calculate Cheese Revenue</button>
+    </form>
+    <div id="cheese-result"></div>
+  </section>
+
+  <!-- Enter Yogurt Sales Data -->
+  <section>
+    <h2>Enter Yogurt Sales Data (ETB)</h2>
+    <form id="yogurt-form">
+      <label for="yogurt-liters">Yogurt Production per Month (liters):</label>
+      <input type="number" id="yogurt-liters" value="200" required>
+
+      <label for="yogurt-price">Yogurt Price per Liter (ETB):</label>
+      <input type="number" id="yogurt-price" value="90" required>
+
+      <button type="button" onclick="calculateYogurt()">Calculate Yogurt Revenue</button>
+    </form>
+    <div id="yogurt-result"></div>
+  </section>
+
+  <footer>
+    <p>Website created by Ermias Wondimu</p>
+  </footer>
+
+  <script>
+    function calculateMilk() {
+      const liters = parseFloat(document.getElementById("daily-production").value);
+      const price = parseFloat(document.getElementById("milk-price").value);
+      const result = liters * price * 365;
+      document.getElementById("milk-result").innerHTML = `<p>Annual Milk Revenue: ${result.toLocaleString()} ETB</p>`;
+    }
+
+    function calculateCheese() {
+      const kg = parseFloat(document.getElementById("cheese-kg").value);
+      const price = parseFloat(document.getElementById("cheese-price").value);
+      const result = kg * price * 12;
+      document.getElementById("cheese-result").innerHTML = `<p>Annual Cheese Revenue: ${result.toLocaleString()} ETB</p>`;
+    }
+
+    function calculateYogurt() {
+      const liters = parseFloat(document.getElementById("yogurt-liters").value);
+      const price = parseFloat(document.getElementById("yogurt-price").value);
+      const result = liters * price * 12;
+      document.getElementById("yogurt-result").innerHTML = `<p>Annual Yogurt Revenue: ${result.toLocaleString()} ETB</p>`;
+    }
+  </script>
+</body>
+</html>
+<!-- End of Business.html -->
